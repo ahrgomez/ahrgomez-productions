@@ -4,8 +4,21 @@ var config = require('../webpack.config.js');
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
+var graphqlHTTP = require('express-graphql');
+var mongoose = require('mongoose');
 
 var app = express();
+
+var schema = require('./graphql');
+
+// GraphqQL server route
+app.use('/graphql', graphqlHTTP({
+    schema,
+    pretty: true
+}));
+
+// Connect mongo database
+mongoose.connect('mongodb://localhost/productions');
 
 var compiler = webpack(config);
 
