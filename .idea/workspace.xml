@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5eeab705-eb2a-4111-a3f9-24be19e1856b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/graphql/index.js" afterPath="$PROJECT_DIR$/server/graphql/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/graphql/mutations/user.js" afterPath="$PROJECT_DIR$/server/graphql/mutations/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/graphql/queries/all.js" afterPath="$PROJECT_DIR$/server/graphql/queries/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/graphql/queries/me.js" afterPath="$PROJECT_DIR$/server/graphql/queries/me.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
     </list>
     <ignored path="ahrgomez-productions.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,11 +118,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/graphql/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#87#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -447,12 +440,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1477858615116</updated>
-      <workItem from="1477858618543" duration="16408000" />
+      <workItem from="1477858618543" duration="16444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16408000" />
+    <option name="totallyTimeSpent" value="16444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2535" height="1330" extended-state="0" />
@@ -643,11 +636,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/graphql/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
