@@ -1,16 +1,29 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType;
-var GraphQLSchema = require('graphql').GraphQLSchema;
+import {
+    GraphQLSchema,
+    GraphQLObjectType,
+} from 'graphql';
 
-var mutations = require('./mutations');
-var queries = require('./queries');
+import me from './queries/me';
+import all from './queries/all';
 
-module.exports(new GraphQLSchema({
+//const schema = new Schema({
+//    query: new ObjectType({
+//        name: 'Query',
+//        fields: {
+//            me
+//        },
+//    }),
+//});
+//
+//export default schema;
+
+
+
+const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'Query',
-        fields: queries
-    }),
-    mutation: new GraphQLObjectType({
-        name: 'Mutation',
-        fields: mutations
+        fields: { me, all }
     })
-}));
+});
+
+export default schema;
