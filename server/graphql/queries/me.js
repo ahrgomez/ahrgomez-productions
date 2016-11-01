@@ -16,7 +16,7 @@ const me = {
             type: new GraphQLNonNull(GraphQLString)
         }
     },
-    resolve(sourc, args, context, info) {
+    resolve(source, args, context, info) {
         const projection = getProjection(info.fieldASTs[0]);
 
         return UserModel

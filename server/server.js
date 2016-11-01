@@ -21,7 +21,7 @@ app.use('/graphql', graphqlHTTP(req => ({
 })));
 
 app.get('/postUser', (req, res) => {
-    var user = new UserModel({ guid: '123456', aka: 'Âgte 4', email: 'tuputamadre@a.com', password: 'puta' });
+    var user = new UserModel({ guid: '1234567', aka: 'Âgte 5', email: 'tuputamadre2@a.com', password: 'puta2' });
     user.save(function (err) {
         if (err) console.log(err);
         else console.log('saved');

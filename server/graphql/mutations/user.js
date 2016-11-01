@@ -1,25 +1,27 @@
 
-var GraphQLBoolean = require('graphql').GraphQLBoolean;
-var GraphQLNonNull = require('graphql').GraphQLNonNull;
+import {
+    GraphQLNonNull,
+    GraphQLBoolean
+} from 'graphql';
 
-var userInputType = require('../types/user-input');
-var UserModel = require('../../models/user');
+import UserPostType from '../types/UserPostType';
+import UserModel from '../../models/UserModel';
 
-module.exports({
+export default {
     type: GraphQLBoolean,
     args: {
         data: {
             name: 'data',
-            type: new GraphQLNonNull(userInputType)
+            type: new GraphQLNonNull(UserPostType)
         }
     },
-    async resolve (root, params, options) {
-        const userModel = new UserModel(params.data);
-        const newUser = await userModel.save();
+    resolve (source, args, context, info) {
+        const userModel = new UserModel(args.data);
+        const newUser = userModel.save();
 
         if (!newUser) {
-            throw new Error('Error adding new user');
+            throw new Error('Error adding new blog post');
         }
         return true;
     }
-});
+};
