@@ -1,0 +1,22 @@
+type Mutation {
+  addUser(data: UserPostType!): Boolean
+}
+
+type Query {
+  me(guid: String!): User
+  all: [User]
+}
+
+type User {
+  _id: ID
+  guid: String
+  email: String
+  aka: String
+}
+
+input UserPostType {
+  guid: String
+  email: String
+  aka: String
+  password: String
+}

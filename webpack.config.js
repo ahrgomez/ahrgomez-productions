@@ -7,7 +7,7 @@ module.exports = {
     './client/client.js'
   ],
   output: {
-    path: require("path").resolve("./dist"),
+    path: require("path").resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -19,13 +19,24 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.js?$/,
+        exclude: /(node_modules|bower_components)/,
         query: {
-          presets: ['react', 'es2015', 'react-hmre']
-        }
+          plugins: ['react-relay'],
+          presets: [
+            "es2015", "react", "stage-0", {
+              "plugins": [
+                "./schema-build/babelRelayPlugin"
+              ]
+            }
+          ]
+        },
+        //query: {
+        //  plugins: ['react-relay'],
+        //},
+        loaders: [
+          'babel'//?presets[]=react,presets[]=es2015,presets[]=stage-0'
+        ]
       }
     ]
-  }
-}
+  }}
