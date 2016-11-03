@@ -1,9 +1,19 @@
-import Relay from 'react-relay';
-import LoginComponent from './Login';
-
-export default Relay.createContainer(LoginComponent, {
+var LoginContainer = Relay.createContainer(Login, {
+    initialVariables: {
+        guid: ''
+    },
     fragments: {
-        user: () => Relay.QL`
-            fragment on login(email:"ahrgomez@gmail.com", password:"Alex7390") { guid }`
-    }
+        // This GraphQL query executes against
+        // the schema in the 'schema' tab above.
+        //
+        // To learn more about Relay.QL, visit:
+        //   https://facebook.github.io/relay/docs/api-reference-relay-ql.html
+        me: () => Relay.QL`
+      fragment on me(guid: $guid) {
+        email
+      }
+    `,
+    },
 });
+
+export default LoginContainer;

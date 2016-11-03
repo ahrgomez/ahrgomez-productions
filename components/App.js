@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../redux/actions'
+import Relay from 'react-relay'
 
 import Login from './Login/Login'
+import LoginRoute from './Login/LoginRelayRoute'
 
 class App extends Component {
 
   render() {
     return (
       <div>
-        <Login userLogged={this.props.userLogged} />
+        <Relay.RootContainer Component={Login} route={new LoginRoute({guid: this.props.userLogged.guid})} />
       </div>
     )
   }

@@ -1,8 +1,24 @@
-import Relay from 'react-relay';
+import Relay from 'react-relay'
 
-export default class extends Relay.Route {
-    static queries = {
-        user: () => Relay.QL`query { user }`
+class LoginRoute extends Relay.Route {
+    static routeName = 'MeRoute';
+
+    static routeParams = {
+        guid: ''
     };
-    static routeName = 'LoginRoute';
+
+    static queries = {
+        // Here, we compose your Relay container's
+        // 'greetings' fragment into the 'greetings'
+        // field at the root of the GraphQL schema.
+        me: (Component, {guid}) => Relay.QL`
+      query {
+        me {
+          ${Component.getFragment('me', {guid})},
+        },
+      }
+    `,
+    };
 }
+
+export default LoginRoute;
