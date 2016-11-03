@@ -12,6 +12,13 @@ import schema from './graphql';
 import UserModel from './models/UserModel'
 
 var app = express();
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('./dist'));
+app.use('/public', express.static(__dirname + '/public'))
 
 // GraphqQL server route
 app.use('/graphql', graphqlHTTP(req => ({
@@ -33,18 +40,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/productions', err => {
     if(err != undefined)
         console.log(err);
     else
-    {
         console.log("Database connected");
-    }
 
 });
-
-var compiler = webpack(config);
-
-app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
-app.use(webpackHotMiddleware(compiler));
-
-app.use(express.static('./dist'));
 
 app.use('/', (req, res) => {
     res.sendFile(path.resolve('client/index.html'));
@@ -53,6 +51,6 @@ app.use('/', (req, res) => {
 var port = 3000;
 
 app.listen(port, (error) => {
-  if (error) throw error;
-  console.log("Express server listening on port", port);
+    if (error) throw error;
+    console.log("Express server listening on port", port);
 });

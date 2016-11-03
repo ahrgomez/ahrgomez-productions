@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../redux/actions'
 
+import Login from './Login/Login'
+
 class App extends Component {
 
   render() {
     return (
       <div>
-        <h1>ahrgomez-producers</h1>
+        <Login userLogged={this.props.userLogged} />
       </div>
     )
   }

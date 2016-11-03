@@ -1,0 +1,24 @@
+.nopadding {
+    padding: 0px !important;
+}
+
+.login .picture img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+}
+
+.login .akaLabel span {
+    display: block;
+    text-align: center;
+}
+
+.login .inputs input {
+    display: block;
+    margin: 0 auto;
+}
+
+.login .button input {
+    display: block;
+    margin: 0 auto;
+}
