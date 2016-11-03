@@ -23,6 +23,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
+          plugins: ['./build/babelRelayPlugin'].map(require.resolve),
           presets: ['es2015', 'react', 'stage-0', 'react-hmre']
         }
       }

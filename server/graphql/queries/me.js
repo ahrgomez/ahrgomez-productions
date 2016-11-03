@@ -18,7 +18,7 @@ const me = {
     },
     resolve(source, args, context, info) {
         const projection = getProjection(info.fieldASTs[0]);
-
+        console.log(info);
         return UserModel
             .findOne(args)
             .select(projection)

@@ -11,11 +11,11 @@ class LoginRoute extends Relay.Route {
         // Here, we compose your Relay container's
         // 'greetings' fragment into the 'greetings'
         // field at the root of the GraphQL schema.
-        me: (Component, {guid}) => Relay.QL`
+        User: (Component, guid) => Relay.QL`
       query {
-        me {
-          ${Component.getFragment('me', {guid})},
-        },
+          me(guid: $guid) {
+            ${Component.getFragment('User')},
+          }
       }
     `,
     };
