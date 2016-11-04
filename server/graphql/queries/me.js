@@ -17,12 +17,16 @@ const me = {
         }
     },
     resolve(source, args, context, info) {
-        const projection = getProjection(info.fieldASTs[0]);
-        console.log(info);
-        return UserModel
+        const projection = getProjection(info);
+        console.log(projection);
+        var User =  UserModel
             .findOne(args)
             .select(projection)
             .exec();
+
+        console.log(User);
+
+        return User;
     },
 };
 
